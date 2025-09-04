@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maestro Cuts Barbershop</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maestro Cuts Barbershop</title>
+  <meta name="description" content="Maestro Cuts Barbershop — modern and classic cuts, fades, and grooming. Open Tues–Sat 9am–6pm, Sun 8am–2pm." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Maestro Cuts Barbershop</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <h1>Maestro Cuts Barbershop</h1>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="intro">
-            <h2>Welcome to Maestro Cuts</h2>
-            <p>Come get a fresh fade. Experienced barbers wait for you. </p>
-        </section>
+  <main id="main">
+    <section id="home" class="intro">
+      <h2>Welcome to Maestro Cuts</h2>
+      <p>Come get a fresh fade. Experienced barbers are ready for you.</p>
+      <p><a class="btn" href="#contact">Book an Appointment</a></p>
+    </section>
 
-        <section class="hours">
-            <h2>Opening Hours</h2>
-            <p>Tuesday – Saturday: 9am – 6pm</p>
-            <p>Sunday: 8am – 2pm</p>
-            <p>Monday: Closed</p>
-        </section>
-    </main>
+    <section id="services" class="services">
+      <h2>Services</h2>
+      <ul class="service-list">
+        <li>Classic Cut</li>
+        <li>Skin Fade</li>
+        <li>Beard Trim &amp; Line-Up</li>
+        <li>Kids Cut</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Maestro Cuts Barbershop | Designed with care</p>
-    </footer>
+    <section class="hours">
+      <h2>Opening Hours</h2>
+      <p><strong>Tuesday – Saturday:</strong> 9:00 AM – 6:00 PM</p>
+      <p><strong>Sunday:</strong> 8:00 AM – 2:00 PM</p>
+      <p><strong>Monday:</strong> Closed</p>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>We blend classic craftsmanship with modern style. Your cut, your way — every time.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p><strong>Phone:</strong> <a href="tel:+15555551234">(555) 555-1234</a></p>
+      <p><strong>Address:</strong> <a href="https://maps.google.com/?q=Maestro+Cuts+Barbershop" target="_blank" rel="noopener">123 Main St, Your City</a></p>
+      <p><strong>Email:</strong> <a href="mailto:hello@maestrocuts.com">hello@maestrocuts.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="y"></span> Maestro Cuts Barbershop • Designed with care</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
