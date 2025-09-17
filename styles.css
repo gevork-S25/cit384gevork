@@ -154,6 +154,28 @@ section {
   padding: 10px 12px; border-radius: 10px; color: var(--muted);
 }
 
+/* Gallery */
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 16px;
+padding: 20px;
+text-align: center;  
+}
+
+.gallery h2 {
+  grid-column: 1 / -1; /* heading spans the whole row */
+  margin-bottom: 10px;
+}
+
+.gallery img,
+.gallery video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 /* Footer */
 .hours p { margin: 6px 0; }
 footer {
