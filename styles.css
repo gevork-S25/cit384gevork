@@ -25,6 +25,91 @@ header {
   padding: 20px;
   text-align: center;
 }
+
+/* When header is scrolled */
+header.scrolled {
+  background: #111;         /* darker background */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hamburger button (mobile) */
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Rotate into “X” when active */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile-first collapsed nav with smooth slide */
+.nav {
+  overflow: hidden;                 /* hide while collapsed */
+  max-height: 0;                    /* collapsed */
+  opacity: 0;                       /* fade */
+  transform: translateY(-6px);      /* slight lift */
+  transition: 
+    max-height 300ms ease,
+    opacity 250ms ease,
+    transform 250ms ease;
+  background: #1f1f1f;
+  padding: 0 16px;                  /* side padding only when closed */
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* When open */
+.nav.show {
+  max-height: 320px;                /* big enough for your links */
+  opacity: 1;
+  transform: translateY(0);
+  padding: 12px 16px;               /* add vertical padding when opened */
+}
+
+.nav ul {
+  list-style: none; margin: 0;
+  display: grid; gap: 10px; padding: 0;
+}
+
+.nav a { color: #fff; text-decoration: none; font-weight: 600; }
+.nav a:hover { text-decoration: underline; }
+
+/* Desktop breakpoint: show inline, no animation */
+@media (min-width: 900px) {
+  .hamburger { display: none; }
+  .nav {
+    max-height: none; opacity: 1; transform: none; overflow: visible;
+    background: transparent; border-top: 0; padding: 0;
+  }
+  .nav ul { display: flex; gap: 20px; align-items: center; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav { transition: none; }
+}
+
 header h1 { margin: 0; font-size: 1.8rem; }
 nav ul {
   list-style: none; margin: 10px 0 0; padding: 0;

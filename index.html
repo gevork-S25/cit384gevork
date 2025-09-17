@@ -12,7 +12,10 @@
   <header>
     <img src="photos/IMG_2055.jpg" alt="Maestro Cuts Logo" style="height: 100px;">
     <h1>Maestro Cuts Barbershop</h1>
-    <nav aria-label="Primary">
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
@@ -68,6 +71,8 @@
   <footer>
     <p>&copy; <span id="y"></span> Maestro Cuts Barbershop • Designed with care</p>
   </footer>
+
+  <script src="script.js" defer></script>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
