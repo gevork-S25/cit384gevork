@@ -186,19 +186,26 @@ section {
 .btn:hover { filter: brightness(.95); }
 
 /* Services grid */
-.service-list {
+.service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  padding-left: 0;
-  list-style: none;
-  margin: 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
-.service-list li {
-  background: var(--bg);
-  padding: 10px 12px;
-  border-radius: 10px;
-  color: var(--muted);
+
+.service-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+}
+.service-card h3 {
+  margin-top: 0;
+  color: var(--dark);
 }
 
 /* Gallery */
