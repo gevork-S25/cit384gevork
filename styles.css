@@ -321,3 +321,22 @@ footer {
   color: #080808;
 }
 .trust small { opacity: .8; }
+
+/* Testimonials About */
+.testimonials {
+  margin-top: 32px;
+}
+.testimonials blockquote {
+  background: var(--card);
+  border-left: 4px solid var(--dark);
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 8px;
+  font-style: italic;
+}
+.testimonials cite {
+  display: block;
+  margin-top: 6px;
+  font-size: .9rem;
+  color: #555;
+}
