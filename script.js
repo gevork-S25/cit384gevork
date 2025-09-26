@@ -48,4 +48,40 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Thanks for booking with Maestro Cuts 💈");
     });
   }
+
+  // ===== Hero slider (auto-rotate + dots) =====
+  const hero = document.querySelector(".hero");
+  const slides = document.querySelectorAll(".hero-slide, .hero_slide");
+  const dots = document.querySelectorAll(".hero-dots .dot");
+
+  if (slides.length > 0) {
+    let current = 0;
+    const intervalMs = 5000;
+    let timer;
+
+    function show(i) {
+      slides[current].classList.remove("active");
+      dots[current]?.classList.remove("active");
+      current = i;
+      slides[current].classList.add("active");
+      if (dots[current]) dots[current].classList.add("active");
+    }
+    function next() { show((current + 1) % slides.length); }
+    function start() { timer = setInterval(next, intervalMs); }
+    function stop() { clearInterval(timer); }
+
+    // dots click
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => { stop(); show(i); start(); });
+    });
+
+    // pause on hover (desktop nicety)
+    hero.addEventListener("mouseenter", stop);
+    hero.addEventListener("mouseleave", start);
+
+    // kick off
+    start();
+  } else {
+    console.warn("Hero slider: no slides found. Check class name or image paths");
+  }
 });

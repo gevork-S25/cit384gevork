@@ -288,6 +288,56 @@ footer {
   filter: brightness(1.05);
 }
 
+/* ===== Hero slider layers ===== */
+.hero { position: relative; overflow: hidden; }
+.hero__content { position: relative; z-index: 2; }
+
+/* gradient overlay above images, below text */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay));
+  z-index: 1;
+}
+
+/* slides container behind overlay */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background: center/cover no-repeat;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero-slide.active { opacity: 1; }
+
+/* dots */
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3; /* above overlay & slides */
+}
+.hero-dots .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  opacity: .8;
+  cursor: pointer;
+}
+.hero-dots .dot.active,
+.hero-dots .dot:hover { background: #fff; opacity: 1; }
+
+
 /* Highlights */
 .highlights {
   display: grid;
@@ -353,3 +403,54 @@ footer {
   font-size: .9rem;
   color: #555;
 }
+
+/* --- Hero slider: support both dashed and underscored class names --- */
+.hero { position: relative; overflow: hidden; }
+.hero__content, .hero_content { position: relative; z-index: 2; }
+
+/* gradient overlay above images, below text */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--hero-overlay), var(--hero-overlay));
+  z-index: 1;
+}
+
+/* slides container behind overlay */
+.hero-slider, .hero__slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* individual slides */
+.hero-slide, .hero_slide {
+  position: absolute;
+  inset: 0;
+  background: center/cover no-repeat;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero-slide.active, .hero_slide.active { opacity: 1; }
+
+/* dots */
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.hero-dots .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: transparent;
+  opacity: .8;
+  cursor: pointer;
+}
+.hero-dots .dot.active,
+.hero-dots .dot:hover { background: #fff; opacity: 1; }
