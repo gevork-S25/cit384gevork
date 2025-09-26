@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 :root {
   --bg: #656363;      /* page background */
   --text: #222;        /* default text */
@@ -15,13 +16,25 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background:var(--bg);        /* base background color */
   line-height: 1.5;
 }
 
 /* Header */
 header {
-  background: var(--dark);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      #111111,
+      #504f4f 12px,
+      #242323 12px,
+      #0e0d0d 24px
+    ),
+    var(--dark);
   color: var(--headerText);
   padding: 20px;
   text-align: center;
